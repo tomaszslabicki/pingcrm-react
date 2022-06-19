@@ -15,6 +15,8 @@
 Route::get('login')->name('login')->uses('Auth\LoginController@showLoginForm')->middleware('guest');
 Route::post('login')->name('login.attempt')->uses('Auth\LoginController@login')->middleware('guest');
 Route::post('logout')->name('logout')->uses('Auth\LoginController@logout');
+Route::get('forgot-password')->name('forgot-password')->uses('Auth\ForgotPasswordController@showForgotPasswordForm')->middleware('guest');
+Route::post('forgot-password')->name('forgot-password.post')->uses('Auth\ForgotPasswordController@handleForgottenPasswordRequest')->middleware('email.exists');
 
 // Dashboard
 Route::get('/')->name('dashboard')->uses('DashboardController')->middleware('auth');

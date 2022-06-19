@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\DoesEmailExist;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -62,6 +63,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'remember' => \Reinink\RememberQueryStrings::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'email.exists' => DoesEmailExist::class,
     ];
 
     /**

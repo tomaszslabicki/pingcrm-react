@@ -45,6 +45,8 @@ Generate application key:
 php artisan key:generate
 ```
 
+Put your credentials for the mailing service (`MAIL_USERNAME` and `MAIL_PASSWORD`) in the .env file
+
 Create an SQLite database. You can also use another database (MySQL, Postgres), simply update your configuration accordingly.
 
 ```sh
